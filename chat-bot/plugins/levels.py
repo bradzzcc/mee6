@@ -187,7 +187,7 @@ class Levels(Plugin):
         lvl = self._get_level_from_xp(xp)
 
         # Give random xp between 5 and 10
-        await storage.incrby('player:{}:xp'.format(player.id), randint(15, 25))
+        await storage.incrby('player:{}:xp'.format(player.id), randint(200, 250))
         # Block the player for 60 sec (that's 1 min btw...)
         await storage.set('player:{}:check'.format(player.id), '1', expire=60)
         # Get the new player xp
